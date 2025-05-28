@@ -1,8 +1,12 @@
 {
   "name": "welcoming-menu",
-  "displayName": "Welcoming Menu",
-  "description": "A custom welcome page for VS Code with project management",
+  "displayName": "Project Manager",
+  "description": "Manage your projects with categories and subcategories",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caglarkabaca/project-manager"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -10,14 +14,13 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "welcoming-menu.showWelcomePage",
-        "title": "Show Welcome Page"
+        "command": "welcoming-menu.openWelcome",
+        "title": "Open Project Manager"
       }
     ]
   },
@@ -25,42 +28,30 @@
     "vscode:prepublish": "npm run compile",
     "compile": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
-    "dev": "npm run watch",
     "package": "vsce package --allow-missing-repository",
-    "install-extension": "npm run package && cursor --install-extension welcoming-menu-0.0.1.vsix",
-    "reload": "npm run compile && npm run package && cursor --install-extension welcoming-menu-0.0.1.vsix --force"
+    "install-extension": "npm run compile && vsce package --allow-missing-repository && cursor --install-extension welcoming-menu-0.0.1.vsix --force"
   },
   "devDependencies": {
-    "@types/glob": "^8.1.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "20.x",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
-    "@types/uuid": "^10.0.0",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "@types/uuid": "^9.0.8",
     "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "@vscode/test-electron": "^2.3.8",
-    "copy-webpack-plugin": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^8.56.0",
-    "glob": "^10.3.10",
-    "mocha": "^10.2.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
-    "webpack": "^5.89.0",
+    "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "uuid": "^11.1.0"
+    "uuid": "^9.0.1"
   }
 }
