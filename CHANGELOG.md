@@ -6,4 +6,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+- Updated repository URL to match the correct GitHub repository
 - Initial release

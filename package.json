@@ -6,7 +6,7 @@
   "publisher": "caglarkabaca",
   "repository": {
     "type": "git",
-    "url": "https://github.com/caglarkabaca/project-manager"
+    "url": "https://github.com/caglarkabaca/welcoming-menu"
   },
   "engines": {
     "vscode": "^1.85.0"
@@ -14,7 +14,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:welcoming-menu.openWelcome"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
